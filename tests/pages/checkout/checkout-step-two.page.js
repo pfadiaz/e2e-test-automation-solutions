@@ -1,4 +1,4 @@
-import Page from '../page.js';
+import Page from '../page';
 
 class CheckOutStepTwoPage extends Page {
   get url() {

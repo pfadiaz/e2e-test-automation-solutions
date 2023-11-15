@@ -35,4 +35,4 @@ const addBrowserCustomCommands = async function () {
   });
 };
 
-export default addBrowserCustomCommands;
+module.exports = { addBrowserCustomCommands };

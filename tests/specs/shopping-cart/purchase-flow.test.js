@@ -1,10 +1,10 @@
-import Pages from '../pages/index.js';
-import Utils from '../utils/index.js';
-import {fixtures} from '../fixtures/complete-checkout.js'
+import Pages from '../../pages/index';
+import Utils from '../../utils/index';
+import fixtures from '../../fixtures/complete-checkout.json';
 
 describe('Feature: Shopping Cart', async function () {
   before(async function () {
-    this.fixtures = fixtures();
+    this.fixtures = fixtures;
     this.profile = await Utils.generateUserInformation();
     await Pages.loginPage.open();
     await Pages.loginPage.login(this.profile.standard.username, this.profile.standard.password);
@@ -13,6 +13,7 @@ describe('Feature: Shopping Cart', async function () {
 
   it('TC-001 - validates that an standard user can complete a purchase flow', async function () {
     const itemToBuy = await Utils.pickRandomJSONEntry(Pages.inventoryPage.inventoryItems());
+
     await Pages.inventoryPage.addToShoppingCart(itemToBuy);
     this.itemInCart = await Pages.inventoryPage.getItemsDetails(itemToBuy);
     await Pages.inventoryPage.openShoppingCart();
