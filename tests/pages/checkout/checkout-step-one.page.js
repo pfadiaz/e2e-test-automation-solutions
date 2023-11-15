@@ -1,8 +1,8 @@
-import Page from '../page.js';
+import Page from '../page';
 
 class CheckOutStepOnePage extends Page {
   get url() {
-    return '/checkout-step-one.html';
+    return '/checkout-step-two.html';
   }
 
   /**
