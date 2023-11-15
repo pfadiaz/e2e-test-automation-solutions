@@ -1,7 +1,4 @@
-{
-}
-module.exports = {
-  ...require('prettier-airbnb-config'),
+export default  {
   arrowParens: 'always',
   bracketSpacing: true,
   quoteProps: 'as-needed',
