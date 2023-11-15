@@ -1,4 +1,4 @@
-import Page from './page';
+import Page from './page.js';
 
 class InventoryPage extends Page {
   get url() {
@@ -103,6 +103,8 @@ class InventoryPage extends Page {
 
   // Add an item to the cart
   async addToShoppingCart(item) {
+    const element = await this.inventoryItems()[item].add
+    await element.waitForDisplayed()
     await this.inventoryItems()[item].add.clickOn();
   }
 

@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-
+import 'dotenv/config'
 /**
  *
  * @returns an object with test data ready to use
@@ -11,9 +11,9 @@ const generateUserInformation = async () => {
       standard: {
         username: 'standard_user',
         password: process.env.STANDARD_USER_PASSWORD,
-        firstName: faker.name.firstName(),
-        lastName: faker.name.lastName(),
-        postalCode: faker.address.zipCode(),
+        firstName: faker.person.firstName(),
+        lastName: faker.person.lastName(),
+        postalCode: faker.location.zipCode(),
       },
     });
   });
